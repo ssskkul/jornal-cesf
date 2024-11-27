@@ -1,216 +1,50 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.veja-tambem {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 2px solid #ccc;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
-    margin: 0;
-    margin: 0; /* Remove as margens padrão */
-    padding: 0; /* Remove os paddings padrão */
-    margin-top: 80px;
+.veja-tambem h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
-header {
-    position: fixed;  /* Faz o header ficar fixo no topo */
-    color: white;
-    top: 0;           /* Coloca o header no topo da página */
-    left: 0;          /* Faz o header começar na lateral esquerda */
-    width: 100%;      /* Garante que o header ocupe toda a largura da página */
-    background-color: #8a1616;  /* Cor de fundo vermelha */
-    padding: 10px 20px;  /* Padding para o header não ficar colado nas bordas */
-    z-index: 1000;     /* Garante que o header fique acima de outros conteúdos */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Adiciona sombra para destaque */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.thumbnails {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Permite que os itens se ajustem ao espaço disponível */
 }
 
-header .menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
+.thumbnail {
+  flex: 1 1 calc(33.333% - 20px); /* Cada item ocupa 1/3 da linha, com espaçamento */
+  max-width: 300px; /* Tamanho máximo para não ficar muito grande */
+  text-align: center;
 }
 
-header .menu a:hover {
-    color: #ffcccb;
+.thumbnail img {
+  width: 100%; /* Ajusta as imagens para caber dentro do container */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-header .logo {
-    font-family: "Merriweather", serif;
-    font-size: 1.8em;
-    font-weight: bold;
-    text-align: center;
-    flex-grow: 1;
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .thumbnail {
+    flex: 1 1 calc(50% - 20px); /* Cada item ocupa metade da linha */
+  }
 }
 
-header .search-bar {
-    position: relative;
-}
+@media (max-width: 480px) {
+  .thumbnail {
+    flex: 1 1 100%; /* Cada item ocupa toda a largura da linha */
+  }
 
-header .search-bar input {
-    border: none;
-    padding: 8px 12px;
-    border-radius: 15px;
-    font-size: 0.9em;
-    color: #333;
-    outline: none;
-    background-color: #fff;
-}
-
-header .search-bar input::placeholder {
-    color: #aaa;
-}
-
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-main img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin: 15px 0;
-}
-
-.reportagem h1 {
-    font-size: 2.1em;
-    color: #8a1616;
-    margin-bottom: 3px;
-}
-
-.reportagem h2 {
-    font-size: 1.4em;
-    margin: 5px 0 20px;
-    color: #555;
-    text-align: left;
-}
-
-.reportagem .autor {
-    margin: 10px 0 2px;
-    color: #666;
-    font-size: 0.9em;
-    text-align: left;
-    font-style: italic;
-}
-
-.reportagem p {
-    margin: 10px 0;
-    text-align: justify;
-}
-
-.reportagem blockquote {
-    font-style: italic;
-    margin: 15px 0;
-    padding: 10px 15px;
-    background: #f4f4f4;
-    border-left: 4px solid #ccc;
-}
-
-footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #8a1616;
-    color: white;
-    font-size: 0.9em;
-}
-
-/* Estilo do menu e do ícone de hambúrguer */
-header .menu {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Espaço entre o ícone e o texto */
-}
-
-header .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 18px;
-    cursor: pointer;
-}
-
-header .hamburger span {
-    display: block;
-    height: 3px;
-    background-color: white;
-    border-radius: 3px;
-    transition: 0.3s;
-}
-
-/* Efeito de hover (opcional) */
-header .hamburger:hover span {
-    background-color: #ffcccb;
-}
-
-header .menu-text:hover {
-    color: #ffcccb;
-}
-
-/* Estilo da seção "Veja Também" */
-main .see-also {
-    background-color: #f9f9f9;
-    padding: 20px;
-    text-align: center;
-}
-
-main .see-also h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-main .thumbnails {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-/* Estilo de cada thumbnail */
-main .thumbnails .thumbnail {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-/* Efeito de hover nas thumbnails */
-main .thumbnails .thumbnail:hover {
-    transform: scale(1.05);
-}
-
-/* Estilo da imagem de cada thumbnail */
-main .thumbnails .thumbnail img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-/* Estilo do texto dentro das thumbnails */
-main .thumbnails .thumbnail-text {
-    padding: 15px;
-    text-align: left;
-}
-
-main .thumbnails .thumbnail-text h3 {
-    font-size: 0.9em;
-    color: #333;
+  .thumbnail img {
+    max-width: 90%; /* Limita o tamanho da imagem no celular */
+    margin: 0 auto; /* Centraliza no celular */
+  }
 }
